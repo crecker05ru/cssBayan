@@ -6,4 +6,52 @@
 
 body {
   background-color: #66788a;
+  color: #fff;
+}
+
+.accordion-bayan{
+  max-width: 1280px;
+  margin: 0  auto;
+}
+
+.bayan-item {
+  display: block;
+  background-color: coral;
+  border-top: 1px solid rgb(63, 255, 20);
+  margin-bottom: 20px;
+  transition: all linear 0.2s;
+
+}
+
+.bayan-item:hover {
+  background-color: rgb(255, 162, 129);
+}
+
+.item-label {
+  display: block;
+  cursor: pointer;
+}
+
+.item-img {
+  display: none;
+}
+
+.item-span {
+  font-size: 24px;
+  font-weight: 700px;
+}
+/* .bayan-item .item-img ,.item-span {
+  display: none;
+} */
+
+/* .bayan-item input[type="checkbox"]:checked img span{
+  display: block;
+} */
+
+.item-checkbox {
+  appearance: none;
+}
+.item-checkbox:checked +
+.item-img {
+  display: block;
 }
