@@ -202,7 +202,7 @@ body {
   }
 
   .item-checkbox:checked~.item-img {
-    height: 280px;
+    height: 50vh;
   }
 
   .item-checkbox:checked~.item-arrow {
