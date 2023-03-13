@@ -12,7 +12,7 @@ li {
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0vh;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,37 +29,36 @@ body {
 }
 
 .accordion-bayan {
-  max-width: 1280px;
+  max-width: 90%;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 2%;
 }
 
 .bayan-item {
   display: block;
   border-top: 1px solid rgb(63, 255, 20);
-  margin-bottom: 10px;
+  margin-bottom: 1%;
   transition: all linear 0.2s;
-
 }
 
 .item-label {
   display: block;
   cursor: pointer;
-  position: relative;
-  padding: 10px 0;
+  padding: 1% 0;
 }
 
-
+.item-interactions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1%;
+}
 
 .item-arrow {
-  position: absolute;
-  right: 10px;
-  top: 20px;
   display: inline-block;
   content: '';
-  width: 10px;
-  height: 10px;
-  padding: 10px;
+  width: 1%;
+  height: 1%;
+  padding: 1%;
   background-color: transparent;
   border: solid #fff;
   border-width: 3px 3px 0 0;
@@ -75,40 +74,22 @@ body {
 .item-img {
   display: block;
   margin: 0 auto;
-  width: 320px;
-  height: 0px;
+  width: 60vh;
+  height: 0;
   overflow: hidden;
   transition: all linear 0.2s;
 }
 
 .item-span {
   display: inline-block;
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 500;
   transition: all linear 0.2s;
-}
-
-.item-span:hover {
-  color: #5e00b6;
-}
-
-
-.item-span:visited {
-  color: #0471ff;
-  ;
+  color: #fff;
 }
 
 .item-checkbox {
   appearance: none;
-}
-
-.item-label:hover>.item-arrow {
-  border: solid #5e00b6;
-  border-width: 3px 3px 0 0;
-}
-
-.item-label:hover>span {
-  color: #5e00b6;
 }
 
 .item-label:active>.item-img {
@@ -124,78 +105,113 @@ body {
   border-width: 3px 3px 0 0;
 }
 
-
-.item-checkbox:checked~.item-img {
-  height: 400px;
-  overflow: auto;
-}
-
-.item-checkbox:checked~.item-span {
-  color: #5e00b6;
-}
-
-.item-checkbox:checked~.item-arrow {
-  border: solid #5e00b6;
-  border-width: 3px 3px 0 0;
-  transform: rotate(135deg);
-}
-
 .item-label:hover .item-arrow {
   border: solid #5e00b6;
   border-width: 3px 3px 0 0;
   transform: rotate(135deg);
 }
 
+.item-label:hover .item-span {
+  color: #5e00b6;
+}
+
 .item-label:hover>.item-img {
-  height: 400px;
+  height: 80vh;
   overflow: auto;
 }
 
-@media screen and (max-width: 840px) {
-  .accordion-bayan {
-    max-width: 768px;
-  }
+.item-checkbox:checked~.item-img {
+  height: 80vh;
+  overflow: auto;
+}
 
-  .item-arrow {
-    width: 5px;
-    height: 5px;
-    padding: 5px;
-    opacity: 1;
-  }
+.item-checkbox:checked~.item-interactions>.item-span {
+  color: #5e00b6;
+}
+
+.item-checkbox:checked~.item-interactions>.item-arrow {
+  border: solid #5e00b6;
+  border-width: 3px 3px 0 0;
+  transform: rotate(135deg);
+}
+
+@media screen and (max-width: 840px) {
 
   .item-img {
-    width: 240px;
+    width: 50vh;
+    overflow: auto;
+  } 
+
+  .item-span {
+    font-size: 1.5rem;
+  }
+
+   .item-label:hover>.item-img {
+    height: 70vh;
+  } 
+
+  .item-checkbox:checked~.item-img {
+    height: 70vh;
+  }
+
+}
+
+@media screen and (max-width: 380px) {
+
+  .item-img {
+    width: 40vh;
     overflow: auto;
   }
 
+  .item-label:hover>.item-img {
+    height: 50vh;
+  }
+
+  .item-checkbox:checked~.item-img {
+    height: 50vh;
+  }
+
   .item-span {
-    font-size: 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (hover: none) {
+
+  .item-label {
+    cursor: default;
+  }
+
+  .item-arrow {
+    opacity: 1;
+  }
+
+  .item-span:hover {
+    color: #fff;
+  }
+
+  .item-label:hover .item-arrow {
+    border: solid #fff;
+    border-width: 3px 3px 0 0;
+    transform: rotate(-45deg);
   }
 
   .item-label:hover>.item-img {
     height: 0;
-  }
-
-  .item-checkbox:checked~.item-img {
-    height: 320px;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .accordion-bayan {
-    max-width: 300px;
-  }
-
-  .item-img {
-    width: 220px;
-    overflow: auto;
+    overflow: hidden;
   }
 
   .item-checkbox:checked~.item-img {
     height: 280px;
   }
 
-  .item-span {
-    font-size: 16px;
+  .item-checkbox:checked~.item-arrow {
+    border: solid #5e00b6;
+    border-width: 3px 3px 0 0;
+    transform: rotate(135deg);
+  }
+
+  .item-checkbox:checked~.item-span {
+    color: solid #5e00b6;
   }
 }
